@@ -39,19 +39,6 @@ def get_forecast_points():
                 return loads(file.read())
 
 
-def get_juneteenth():
-        jt: datetime
-        now: datetime = datetime.now()
-        actual: datetime = datetime(now.year, 6, 19, tzinfo=est)
-        if actual.weekday == 5:
-                jt = actual - timedelta(days=1)
-        elif actual.weekday == 6:
-                jt = actual + timedelta(days=1)
-        else:
-                jt = actual
-        return jt
-
-
 def get_nws_headers(): 
         with open("nws-headers.json", "r") as file:
                 return loads(file.read())
